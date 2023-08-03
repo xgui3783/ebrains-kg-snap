@@ -10,13 +10,5 @@ setup(
     python_requires=">=3.7",
     install_requires=[
         "requests",
-
-        # waiting for
-        # https://github.com/HumanBrainProject/ebrains-drive/pull/22
-        # and
-        # https://github.com/HumanBrainProject/ebrains-drive/pull/20
-        # to merge and release
-        # once merged, use ebrains-drive as dependency
-        "git+https://github.com/xgui3783/ebrains-drive.git@tmp_fixDeleteUseIO",
     ]
 )
