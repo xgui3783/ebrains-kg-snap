@@ -1,10 +1,9 @@
 import os, requests, json
-from .config import kg_endpoint, auth_token, stage
 from pathlib import Path
 
-url = f"{kg_endpoint}/v3/queries/bd7127eb-9559-44d3-a004-7db63b0f8495/instances?stage={stage}&vocab=https://schema.hbp.eu/myQuery/"
-
 def snap(path_to_snapshot: Path):
+    from .config import kg_endpoint, auth_token, stage
+    url = f"{kg_endpoint}/v3/queries/bd7127eb-9559-44d3-a004-7db63b0f8495/instances?stage={stage}&vocab=https://schema.hbp.eu/myQuery/"
     path_to_snapshot.mkdir(parents=True, exist_ok=True)
     resp = requests.get(url, headers={
         "Authorization": f"bearer {auth_token}"
